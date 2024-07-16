@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculateur d'IMC</title>
+    <script>
+        function calcul() {
+            var a = parseFloat(document.getElementById("poids").value);
+            var b = parseFloat(document.getElementById("taille").value);
+            var resultat = document.getElementById("resultat");
+            var c = b / 100;
+            var imc = a / (c * c);
+
+            if (isNaN(a) || isNaN(b)) {
+                resultat.innerHTML = "Veuillez remplir tous les champs.";
+                return;
+            }
+
+            var interpretation = "";
+            if (imc < 16.5) {
+                interpretation = "Dénutrition";
+            } else if (imc >= 16.5 && imc < 18.5) {
+                interpretation = "Maigreur";
+            } else if (imc >= 18.5 && imc < 25) {
+                interpretation = "Corpulence normale";
+            } else if (imc >= 25 && imc < 30) {
+                interpretation = "Surpoids";
+            } else if (imc >= 30 && imc < 35) {
+                interpretation = "Obésité modérée";
+            } else {
+                interpretation = "Obésité morbide ou massive";
+            }
+
+            document.getElementById("imc").value = imc.toFixed(2);
+            document.getElementById("text_area").value = "Votre Indice de Masse Corporelle (IMC) est:  " + imc.toFixed(2) + ". " + interpretation;
+        }
+
+        function imprimer() {
+            window.print();
+        }
+
+        function actualiser() {
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    <p>Calculez Votre Indice de Masse Corporelle (IMC):</p>
+    <div style="background-color: gray;">
+        <form>
+            <label for="poids">Poids (en kg):</label>
+            <input type="number" id="poids" name="poids" step="0.01"><br>
+            <label for="taille">Taille (en cm):</label>
+            <input type="number" id="taille" name="taille" step="0.01">
+            <button type="button" onclick="calcul()">Calculer</button>
+        </form>
+        <p id="resultat"> Votre Indice de Masse Corporelle (IMC) est:<input type="number" value="" id="imc" disabled></p><br>
+        
+        <label for="">Avis de notre expert:</label> <br>
+        <textarea id="text_area" rows="8"></textarea> <br>
+        
+    </div>
+    <button type="button" onclick="imprimer()">Imprimer la page</button>
+    <button type="button" onclick="actualiser()">Actualiser la page</button>
+    
+</body>
+</html>
