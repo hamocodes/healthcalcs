@@ -1,4 +1,4 @@
-#HealthCalcs
+# HealthCalcs
 
 HealthCalcs is a lightweight web application that provides a suite of health-related calculators, designed to make it easy for users to assess key health metrics. The app is user-friendly and accessible, making it ideal for both personal use and professional health consultations.
 
