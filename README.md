@@ -1,1 +1,1 @@
-https://hamocodes.github.io/BMI-Calculator/
+https://hamocodes.github.io/healthcalcs/
