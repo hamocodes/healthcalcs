@@ -1,66 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Calculateur d'IMC</title>
-    <script>
-        function calcul() {
-            var a = parseFloat(document.getElementById("poids").value);
-            var b = parseFloat(document.getElementById("taille").value);
-            var resultat = document.getElementById("resultat");
-            var c = b / 100;
-            var imc = a / (c * c);
-
-            if (isNaN(a) || isNaN(b)) {
-                resultat.innerHTML = "Veuillez remplir tous les champs.";
-                return;
-            }
-
-            var interpretation = "";
-            if (imc < 16.5) {
-                interpretation = "Dénutrition";
-            } else if (imc >= 16.5 && imc < 18.5) {
-                interpretation = "Maigreur";
-            } else if (imc >= 18.5 && imc < 25) {
-                interpretation = "Corpulence normale";
-            } else if (imc >= 25 && imc < 30) {
-                interpretation = "Surpoids";
-            } else if (imc >= 30 && imc < 35) {
-                interpretation = "Obésité modérée";
-            } else {
-                interpretation = "Obésité morbide ou massive";
-            }
-
-            document.getElementById("imc").value = imc.toFixed(2);
-            document.getElementById("text_area").value = "Votre Indice de Masse Corporelle (IMC) est:  " + imc.toFixed(2) + ". " + interpretation;
-        }
-
-        function imprimer() {
-            window.print();
-        }
-
-        function actualiser() {
-            location.reload();
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCalcs</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Calculez Votre Indice de Masse Corporelle (IMC):</p>
-    <div style="background-color: gray;">
-        <form>
-            <label for="poids">Poids (en kg):</label>
-            <input type="number" id="poids" name="poids" step="0.01"><br>
-            <label for="taille">Taille (en cm):</label>
-            <input type="number" id="taille" name="taille" step="0.01">
-            <button type="button" onclick="calcul()">Calculer</button>
-        </form>
-        <p id="resultat"> Votre Indice de Masse Corporelle (IMC) est:<input type="number" value="" id="imc" disabled></p><br>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="/images/logo.png" alt="Logo"></a>
+        </div>
         
-        <label for="">Avis de notre expert:</label> <br>
-        <textarea id="text_area" rows="8"></textarea> <br>
-        
-    </div>
-    <button type="button" onclick="imprimer()">Imprimer la page</button>
-    <button type="button" onclick="actualiser()">Actualiser la page</button>
+        <div class="toggle" onclick="toggleNav()">☰</div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#calculators">Calculators</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/bmi.html">BMI Calculator</a></li>
+                        <li><a href="/pages/calorie.html">Calorie Calculator</a></li>
+                        <li><a href="/pages/protein.html">Protein Calculator</a></li>
+                        <li><a href="/pages/bmr.html">BMR Calculator</a></li>
+                        <li><a href="/pages/water.html">Water Intake Calculator</a></li>
+                        <li><a href="#more">More Calculators</a></li>
+                    </ul>
+                </li>
+                <li><a href="#signup" class="nav-btn">Sign up</a></li>
+                <li><a href="#signin" class="nav-btn">Sign in</a></li>
+            </ul>
+        </nav>
+    </header>
     
+
+    <!-- Slider Section -->
+    <section class="slider">
+        <div class="slide">
+            <h1>Welcome to Health Calculators by Hamocodes</h1>
+            <p>Calculate your BMI, calories, and more!</p>
+            <a href="#get-started" class="get-started-button">Start Calculator</a>
+        </div>
+    </section>
+
+        <!-- Calculations cards -->
+        <div class="calculations-container">
+            <h2>Featured Calculators</h2>
+            <div class="calculations-grid">
+                <a href="pages/bmi.html" class="card" id="bmi">
+                    <h3>BMI Calculator</h3>
+                    <p>Use our BMI calculator to track your health.</p>
+                </a>
+            
+                <a href="/pages/calorie.html" class="card" id="calorie">
+                    <h3>Calorie Calculator</h3>
+                    <p>Calculate how many calories you need daily.</p>
+                </a>
+            
+                <a href="pages/protein.html" class="card" id="protein">
+                    <h3>Protein Calculator</h3>
+                    <p>Find out how much protein you need for your fitness goals.</p>
+                </a>
+            
+                <a href="pages/bmr.html" class="card" id="fat">
+                    <h3>BMR Calculator</h3>
+                    <p>Calculate your body fat percentage accurately.</p>
+                </a>
+            
+                <a href="pages/water.html" class="card" id="water">
+                    <h3>Water Intake Calculator</h3>
+                    <p>Check how much water you need per day.</p>
+                </a>
+            
+                <a href="#moreclcs" class="card" id="more">
+                    <h3>More Calculators</h3>
+                    <p>Explore other health calculators and tools.</p>
+                </a>
+            </div>
+        </div>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <h2>Our Mission</h2>
+        <p>We aim to provide accessible tools to help you manage and improve your health, every step of the way.</p>
+    </section>
+
+
+    <!-- User Feedback Section -->
+    <section class="feedback">
+        <h2>What Our Users Say</h2>
+        <div class="feedback-grid">
+            <div class="feedback-card">
+                <p>"This site helped me stay on track with my health goals!"</p>
+                <h4>- Alex</h4>
+            </div>
+            <div class="feedback-card">
+                <p>"Easy to use and very informative. Highly recommended!"</p>
+                <h4>- Jamie</h4>
+            </div>
+            <div class="feedback-card">
+                <p>"Great tools for anyone looking to live a healthier life."</p>
+                <h4>- Taylor</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Account Creation Section -->
+    <section class="create-account">
+        <h2>Get started using Hamocalcs today</h2>
+        <p>Create a free account so you can save your progress at any time and access personalized health tools and resources.</p>
+        <a href="#create-account" class="account-button">Create an Account</a>
+    </section>
+
+
+
+
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <!-- Logo Section -->
+        <div class="footer-logo">
+            <img src="/images/logo.png" alt="healthcalcs Logo" class="logo-img">
+            
+        </div>
+        
+        <!-- Links Section -->
+        <div class="footer-links">
+            <div class="link-group">
+                <a href="#about">About</a>
+                <a href="#partners">Calculators</a>
+                <a href="#career">Careers</a>
+            </div>
+            <div class="link-group">
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#license">License</a>
+            </div>
+            <div class="link-group">
+                <a href="#help-center">Help Center</a>
+                <a href="#calculators">Community</a>
+                <a href="#suggestions">Give Suggestions</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Hamocodes. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="scripts.js"></script>
+
 </body>
 </html>
