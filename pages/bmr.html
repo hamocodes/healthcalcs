@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR Calculator</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/css/bmr.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="/index.html"><img src="/images/logo.png" alt="Logo"></a>
+        </div>
+        
+        <div class="toggle" onclick="toggleNav()">☰</div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#calculators">Calculators</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/bmi.html">BMI Calculator</a></li>
+                        <li><a href="/pages/calorie.html">Calorie Calculator</a></li>
+                        <li><a href="/pages/protein.html">Protein Calculator</a></li>
+                        <li><a href="/pages/bmr.html">BMR Calculator</a></li>
+                        <li><a href="/pages/water.html">Water Intake Calculator</a></li>
+                        <li><a href="#more">More Calculators</a></li>
+                    </ul>
+                </li>
+                <li><a href="#signup" class="nav-btn">Sign up</a></li>
+                <li><a href="#signin" class="nav-btn">Sign in</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BMR Calculator Section -->
+    <section class="bmr-container">
+        <h2>BMR Calculator</h2>
+        <p>Calculate your Basal Metabolic Rate (BMR) to understand how many calories you burn at rest.</p>
+
+        <!-- BMR Form -->
+        <form id="bmr-form">
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="">Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="age">Age (years):</label>
+            <input type="number" id="age" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" required>
+
+            <button type="button" onclick="calculateBMR()">Calculate BMR</button>
+        </form>
+
+        <!-- Display Result -->
+        <div id="bmr-result" class="result"></div>
+
+        <button type="button" onclick="printpage()">Print page</button>
+        <button type="button" onclick="reload()">Reload page</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <img src="/images/logo.png" alt="healthcalcs Logo" class="logo-img">
+                
+            </div>
+            
+            <!-- Links Section -->
+            <div class="footer-links">
+                <div class="link-group">
+                    <a href="#about">About</a>
+                    <a href="#partners">Calculators</a>
+                    <a href="#career">Careers</a>
+                </div>
+                <div class="link-group">
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#license">License</a>
+                </div>
+                <div class="link-group">
+                    <a href="#help-center">Help Center</a>
+                    <a href="#calculators">Community</a>
+                    <a href="#suggestions">Give Suggestions</a>
+                </div>
+            </div>
+            <p>&copy; 2024 Hamocodes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for BMR Calculation -->
+    <script src="/js/bmr.js"></script>
+    <script src="/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/bmi.css">
+    <title>BMI</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/index.html"><img src="/images/logo.png" alt="Logo"></a>
+        </div>
+        
+        <div class="toggle" onclick="toggleNav()">☰</div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#calculators">Calculators</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/bmi.html">BMI Calculator</a></li>
+                        <li><a href="/pages/calorie.html">Calorie Calculator</a></li>
+                        <li><a href="/pages/protein.html">Protein Calculator</a></li>
+                        <li><a href="/pages/bmr.html">BMR Calculator</a></li>
+                        <li><a href="/pages/water.html">Water Intake Calculator</a></li>
+                        <li><a href="#more">More Calculators</a></li>
+                    </ul>
+                </li>
+                <li><a href="#signup" class="nav-btn">Sign up</a></li>
+                <li><a href="#signin" class="nav-btn">Sign in</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="bmi-container">
+        <h2>BMI Calculator</h2>
+        <p>Calculate Your Body Mass Index (BMI):</p>
+        
+        <form class="bmi-form">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" step="0.01"><br>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" step="0.01">
+            <button type="button" onclick="calculate()">Calculate</button>
+        </form>
+        <p id="result"> Your Body Mass Index (BMI) is: <input type="number" value="" id="bmi" disabled></p><br>
+        
+        <label class="label" for="">Expert's Advice:</label><br>
+        <textarea id="expert-opinion" rows="8" readonly></textarea>
+        
+        <button type="button" onclick="printpage()">Print page</button>
+        <button type="button" onclick="reload()">Reload page</button>
+    </section>
+    
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <img src="/images/logo.png" alt="healthcalcs Logo" class="logo-img">
+                
+            </div>
+            
+            <!-- Links Section -->
+            <div class="footer-links">
+                <div class="link-group">
+                    <a href="#about">About</a>
+                    <a href="#partners">Calculators</a>
+                    <a href="#career">Careers</a>
+                </div>
+                <div class="link-group">
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#license">License</a>
+                </div>
+                <div class="link-group">
+                    <a href="#help-center">Help Center</a>
+                    <a href="#calculators">Community</a>
+                    <a href="#suggestions">Give Suggestions</a>
+                </div>
+            </div>
+            <p>&copy; 2024 Hamocodes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/bmi.js"></script>
+    <script src="/scripts.js"></script>
+
+
+
+</body>
+</html>

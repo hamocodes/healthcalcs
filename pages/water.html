@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/water.css">
+    <title>Water Intake Calculator</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/index.html"><img src="/images/logo.png" alt="Logo"></a>
+        </div>
+        
+        <div class="toggle" onclick="toggleNav()">☰</div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#calculators">Calculators</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/bmi.html">BMI Calculator</a></li>
+                        <li><a href="/pages/calorie.html">Calorie Calculator</a></li>
+                        <li><a href="/pages/protein.html">Protein Calculator</a></li>
+                        <li><a href="/pages/bmr.html">BMR Calculator</a></li>
+                        <li><a href="/pages/water.html">Water Intake Calculator</a></li>
+                        <li><a href="#more">More Calculators</a></li>
+                    </ul>
+                </li>
+                <li><a href="#signup" class="nav-btn">Sign up</a></li>
+                <li><a href="#signin" class="nav-btn">Sign in</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="calculator-container">
+        <h2>Calculate Your Daily Water Intake</h2>
+        <form>
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" step="0.01" required><br>
+
+            <label for="activity">Activity Level:</label>
+            <select id="activity">
+                <option value="low">Low (sedentary)</option>
+                <option value="moderate">Moderate (some exercise)</option>
+                <option value="high">High (intensive exercise)</option>
+            </select><br>
+
+            <button type="button" onclick="calculateWaterIntake()">Calculate</button>
+        </form>
+        
+        <div id="result">
+            <h3>Your recommended daily water intake is:</h3>
+            <p id="water-intake"></p>
+        </div>
+
+        <button type="button" onclick="printpage()">Print page</button>
+        <button type="button" onclick="reload()">Reload page</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <img src="/images/logo.png" alt="healthcalcs Logo" class="logo-img">
+                
+            </div>
+            
+            <!-- Links Section -->
+            <div class="footer-links">
+                <div class="link-group">
+                    <a href="#about">About</a>
+                    <a href="#partners">Calculators</a>
+                    <a href="#career">Careers</a>
+                </div>
+                <div class="link-group">
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#license">License</a>
+                </div>
+                <div class="link-group">
+                    <a href="#help-center">Help Center</a>
+                    <a href="#calculators">Community</a>
+                    <a href="#suggestions">Give Suggestions</a>
+                </div>
+            </div>
+            <p>&copy; 2024 Hamocodes. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="/scripts.js"></script>
+
+    <script src="/js/water.js"></script>
+</body>
+</html>
