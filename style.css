@@ -339,7 +339,7 @@ footer p {
 .mobile-nav {
     display: none;
     position: fixed;
-    top: 60%;
+    top: 60px;
     right: 0;
     background-color: #ffffff;
     width: 100%;
