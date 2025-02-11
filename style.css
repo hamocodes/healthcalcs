@@ -109,7 +109,6 @@ header nav ul li a:hover {
     color: #f7f7f7; /* Off-white text */
     text-align: center;
     padding: 100px 20px;
-    position: relative;
     background-blend-mode: overlay;
     background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
 }
@@ -339,8 +338,8 @@ footer p {
 /* Hide nav for mobile and show only when active */
 .mobile-nav {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60%;
     right: 0;
     background-color: #ffffff;
     width: 100%;
