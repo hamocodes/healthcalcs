@@ -338,7 +338,7 @@ footer p {
 /* Hide nav for mobile and show only when active */
 .mobile-nav {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 60px;
     right: 0;
     background-color: #ffffff;
